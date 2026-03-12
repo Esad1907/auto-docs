@@ -231,9 +231,13 @@ export default function Home() {
         )}
       </div>
 
-      <footer className="flex items-center gap-4 text-sm text-slate-500">
+      <footer className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-500">
         <Link href="/impressum" className="hover:text-slate-300 transition">
           Impressum
+        </Link>
+        <span className="text-slate-600">·</span>
+        <Link href="/datenschutz" className="hover:text-slate-300 transition">
+          Datenschutz
         </Link>
         <span className="text-slate-600">·</span>
         <Link href="/feedback" className="hover:text-slate-300 transition">
