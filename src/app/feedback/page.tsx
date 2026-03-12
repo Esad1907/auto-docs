@@ -23,15 +23,17 @@ export default function FeedbackPage() {
     };
 
     try {
+      // Aktuell nur Logging, kein externer Versand
+      console.log("[Feedback client]", payload);
+
       const response = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      const data = await response.json().catch(() => null);
-
       if (!response.ok) {
+        const data = await response.json().catch(() => null);
         setError(data?.error ?? "Es ist ein Fehler aufgetreten.");
         return;
       }
@@ -127,7 +129,7 @@ export default function FeedbackPage() {
 
         {success && (
           <div className="mt-6 rounded-lg border border-emerald-500/60 bg-emerald-950/40 px-4 py-3 text-sm text-emerald-200">
-            Vielen Dank für dein Feedback. Die Nachricht wurde gesendet.
+            Vielen Dank für dein Feedback. Die Eingabe wurde erfasst.
           </div>
         )}
 
