@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 export default function Home() {
@@ -69,11 +70,14 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-50 px-4">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-slate-950 text-slate-50 px-4 py-8 gap-8">
+      <div className="w-full max-w-2xl rounded-lg border border-amber-500/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">
+        Hinweis: Die generierten Inserate sind KI-Vorschläge. Bitte prüfe alle Angaben vor der Veröffentlichung sorgfältig.
+      </div>
       <div className="w-full max-w-2xl bg-slate-900/80 border border-slate-800 rounded-2xl shadow-2xl shadow-black/40 p-8 backdrop-blur space-y-8">
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-semibold tracking-tight">
-            AutoDocs
+            AutoInseratAI
           </h1>
           <p className="mt-2 text-sm text-slate-400">
             Erstelle ein strukturiertes Inserat für dein Fahrzeug.
@@ -226,6 +230,16 @@ export default function Home() {
           </section>
         )}
       </div>
+
+      <footer className="flex items-center gap-4 text-sm text-slate-500">
+        <Link href="/impressum" className="hover:text-slate-300 transition">
+          Impressum
+        </Link>
+        <span className="text-slate-600">·</span>
+        <Link href="/feedback" className="hover:text-slate-300 transition">
+          Feedback
+        </Link>
+      </footer>
     </main>
   );
 }
