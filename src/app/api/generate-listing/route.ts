@@ -69,6 +69,7 @@ WICHTIG:
 - Verwende wirklich nur die oben aufgelisteten Informationen und formatiere sie in die beschriebene Struktur.
 - Kein langer Fließtext ohne Struktur.
 - Schreibe so, wie echte Inserate auf Plattformen wie mobile.de formuliert sind.
+- Schreibe die Kurzbeschreibung wie ein echter Händler, nicht wie eine Datenzusammenfassung. Beispiel: "Kraftvoller Hochleistungssportwagen in seltener Sonderausstattung – sofort verfügbar." statt "Es handelt sich um ein Fahrzeug der Marke BMW."
 `.trim();
 
   try {
@@ -80,7 +81,7 @@ WICHTIG:
         {
           role: "system",
           content:
-            "Du schreibst Fahrzeuginserate auf Deutsch im Stil eines sachlichen, erfahrenen Autohändlers: knapp, faktenorientiert, authentisch. Keine übertriebenen Adjektive wie „einzigartig“, „unvergesslich“, „außergewöhnlich“ und keine Marketing-Floskeln. Fakten zuerst, dann eine kurze, nüchterne Beschreibung, dann eine übersichtliche Ausstattungsliste und ein normaler, klarer Abschlusssatz – so, wie reale Inserate auf Plattformen wie mobile.de klingen.",
+            "Du schreibst Fahrzeuginserate auf Deutsch im Stil eines sachlichen, erfahrenen Autohändlers: knapp, faktenorientiert, authentisch. Keine übertriebenen Adjektive. Keine Bullet Points die nur die Eingabefelder wiederholen. Schreibe die Kurzbeschreibung als echten Inseratstext – nicht als Zusammenfassung der Daten. Die Ausstattungsliste soll nur erscheinen wenn konkrete Ausstattungsmerkmale angegeben wurden, nicht Marke/Modell/Baujahr/KM/Zustand wiederholen.",
         },
         {
           role: "user",
