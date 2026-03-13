@@ -69,6 +69,8 @@ WICHTIG:
 - Verwende wirklich nur die oben aufgelisteten Informationen und formatiere sie in die beschriebene Struktur.
 - Kein langer Fließtext ohne Struktur.
 - Schreibe so, wie echte Inserate auf Plattformen wie mobile.de formuliert sind.
+- Schreibe die Kurzbeschreibung für den Käufer: Was macht dieses konkrete Exemplar besonders? Hebe Zustand, Kilometerstand, Farbe und besondere Ausstattungsmerkmale hervor – nicht die Marke oder das Modell als solche. Das Modell steht bereits in der Überschrift.
+- Beispiel: "Kaum gefahren, in seltener Sonderfarbe und mit voller M Carbon Ausstattung ab Werk – ein Fahrzeug direkt aus dem Showroom."
 - Schreibe die Kurzbeschreibung wie ein echter Händler, nicht wie eine Datenzusammenfassung. Beispiel: "Kraftvoller Hochleistungssportwagen in seltener Sonderausstattung – sofort verfügbar." statt "Es handelt sich um ein Fahrzeug der Marke BMW."
 `.trim();
 
