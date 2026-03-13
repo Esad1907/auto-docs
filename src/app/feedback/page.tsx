@@ -1,5 +1,5 @@
 "use client";
-
+import { supabase } from "../supabase";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 
@@ -13,36 +13,23 @@ export default function FeedbackPage() {
     setError(null);
     setSuccess(false);
     setIsLoading(true);
-
+  
     const formData = new FormData(event.currentTarget);
-
-    const payload = {
-      name: (formData.get("name") || "").toString().trim() || undefined,
-      email: (formData.get("email") || "").toString().trim() || undefined,
-      feedback: (formData.get("feedback") || "").toString().trim(),
-    };
-
+  
     try {
-      // Aktuell nur Logging, kein externer Versand
-      console.log("[Feedback client]", payload);
-
-      const response = await fetch("/api/feedback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+      const { error } = await supabase.from("feedback").insert({
+        name: (formData.get("name") || "").toString().trim() || null,
+        email: (formData.get("email") || "").toString().trim() || null,
+        message: (formData.get("feedback") || "").toString().trim(),
       });
-
-      if (!response.ok) {
-        const data = await response.json().catch(() => null);
-        setError(data?.error ?? "Es ist ein Fehler aufgetreten.");
-        return;
-      }
-
+  
+      if (error) throw error;
+  
       setSuccess(true);
       (event.target as HTMLFormElement).reset();
     } catch (err) {
       console.error(err);
-      setError("Es ist ein unerwarteter Fehler aufgetreten.");
+      setError("Es ist ein Fehler aufgetreten.");
     } finally {
       setIsLoading(false);
     }
